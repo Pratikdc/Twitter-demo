@@ -124,20 +124,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static files')
-STATICFILES_DIRS = [
-    BASE_DIR/ 'static'
-]
-
-
-cloudinary.config( 
-  cloud_name = "dig2qmvpj", 
-  api_key = "468467732694781", 
-  api_secret = "12GBcr6gX74SBE83-13C0uXhr8k",
-  secure = True
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = "/static/"
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
 )
 
+
+cloudinary.config(
+    cloud_name="dig2qmvpj",
+    api_key="468467732694781",
+    api_secret="12GBcr6gX74SBE83-13C0uXhr8k",
+    secure=True
+)
 
 
 # Default primary key field type
